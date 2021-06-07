@@ -4,8 +4,9 @@
 
 # Installing some basic system utilities first
 cd ~
+sudo add-apt-repository ppa:git-core/ppa # get the most up to date version of git
 sudo apt-get update -qq
-sudo apt-get install -yy htop neofetch terminator vim zsh
+sudo apt-get install -yy htop neofetch terminator vim git
 
 # Installing Google Chrome
 cd /home/dan/Downloads
@@ -30,10 +31,7 @@ sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free"
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0D811D58
 sudo apt-get update -qq
 sudo apt-get install -yy spotify-client
-
-# Set Zshell as default shell
-chsh -s $(which zsh)
-# Remember to log out and back in for this change to take effect
+ 
 
 # Installation complete.
 echo "All done! Please reboot the computer."
