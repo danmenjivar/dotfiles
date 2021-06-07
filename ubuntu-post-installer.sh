@@ -5,7 +5,7 @@
 # Installing some basic system utilities first
 cd ~
 sudo apt-get update -qq
-sudo apt-get install -yy htop neofetch terminator gimp vim 
+sudo apt-get install -yy htop neofetch terminator vim zsh
 
 # Installing Google Chrome
 cd /home/dan/Downloads
@@ -31,6 +31,8 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0D811D58
 sudo apt-get update -qq
 sudo apt-get install -yy spotify-client
 
+# Set Zshell as default shell
+chsh -s $(which zsh)
 
 # Installation complete.
 echo "All done! Please reboot the computer."
