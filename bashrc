@@ -5,6 +5,7 @@ export PS1="\[\033[38;5;208m\]\u\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;6m\
 
 ## Aliases
 alias ga="git add "
+alias ..="cd .."
 alias cddk="cd ~/Desktop/"
 alias firefox="firefox &"
 alias grep='grep --color=auto'
