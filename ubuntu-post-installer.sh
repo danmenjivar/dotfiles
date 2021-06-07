@@ -33,6 +33,7 @@ sudo apt-get install -yy spotify-client
 
 # Set Zshell as default shell
 chsh -s $(which zsh)
+# Remember to log out and back in for this change to take effect
 
 # Installation complete.
 echo "All done! Please reboot the computer."
