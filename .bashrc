@@ -1,7 +1,12 @@
-#     | |__   __ _ ___| |__  _ __ ___ 
-#     | '_ \ / _` / __| '_ \| '__/ __|
-#     | |_) | (_| \__ \ | | | | | (__ 
-#     |_.__/ \__,_|___/_| |_|_|  \___|
+
+#  ________  ________  ________  ___  ___  ________  ________     
+# |\   __  \|\   __  \|\   ____\|\  \|\  \|\   __  \|\   ____\    
+# \ \  \|\ /\ \  \|\  \ \  \___|\ \  \\\  \ \  \|\  \ \  \___|    
+#  \ \   __  \ \   __  \ \_____  \ \   __  \ \   _  _\ \  \       
+#   \ \  \|\  \ \  \ \  \|____|\  \ \  \ \  \ \  \\  \\ \  \____  
+#    \ \_______\ \__\ \__\____\_\  \ \__\ \__\ \__\\ _\\ \_______\
+#     \|_______|\|__|\|__|\_________\|__|\|__|\|__|\|__|\|_______|
+#                        \|_________|                             
 # by Dan Menjivar
 
 # TODO
@@ -58,7 +63,10 @@ function parse_git_dirty {
 }
 
 
-# Custom PS1
+# custom PS1
+# template for colors: \[\033[COLORm\]
+# 01 = bold, 38;5 = foreground, 48;5 = background
+# PS1="\[\033[01;38;5;39m\]\@ \[\033[01;38;5;15m\]% " # time (opt, add/remove + on next line) [blue foreground, bold]
 PS1="\[\033[01;38;5;214m\]\u"   # current user [orange foreground, bold]
 PS1+="\[\033[01;38;5;15m\]:"    # colon [white foreground, bold]
 PS1+="\[\033[01;38;5;39m\]["    # `[` [blue foreground, bold]
@@ -70,7 +78,7 @@ PS1+="\[$(tput sgr0)\]"         # reset stylings
 export PS1
 
 
-## Aliases
+# aliases
 alias ga="git add "
 alias ..="cd .."
 alias cddk="cd ~/Desktop/"
