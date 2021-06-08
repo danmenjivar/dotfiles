@@ -41,7 +41,7 @@ function parse_git_color {
         echo -e $COLOR_GREEN
     elif [[ $git_status =~ "working tree clean" ]]; then
         echo -e $COLOR_GREEN
-    elif [[ $git_status =~ "Changes to be commited" ]]; then
+    elif [[ $git_status =~ "Changes to be committed" ]]; then
         echo -e $COLOR_YELLOW
     else
         echo -e $COLOR_RED
