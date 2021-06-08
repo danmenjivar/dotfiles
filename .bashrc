@@ -4,6 +4,8 @@
 #     |_.__/ \__,_|___/_| |_|_|  \___|
 # by Dan Menjivar
 
+# TODO
+# - add git status
 
 # cd into directory without needing to type cd
 shopt -s autocd 
@@ -62,15 +64,10 @@ PS1+="\[\033[01;38;5;15m\]:"    # colon [white foreground, bold]
 PS1+="\[\033[01;38;5;39m\]["    # `[` [blue foreground, bold]
 PS1+="\[\033[01;38;5;15m\]\w"   # pwd [white foreground, bold]
 PS1+="\[\033[01;38;5;39m\]]"    # `]` [blue foreground, bold]
+PS1+="\`parse_git_branch\`"     # git status
 PS1+="\[\033[01;38;5;39m\]$ "   # $ with space []
 PS1+="\[$(tput sgr0)\]"         # reset stylings
-
-# PS1+="\`parse_git_branch\`"                         # git status
 export PS1
-
-# ls file bolder
-LS_COLORS=$LS_COLORS:"di:1;"
-export LS_COLORS
 
 
 ## Aliases
@@ -80,4 +77,5 @@ alias cddk="cd ~/Desktop/"
 alias firefox="firefox &"
 alias grep='grep --color=auto'
 alias vi="vim"
+alias ls="ls --color=auto"
 alias lst="ls -lht"
