@@ -23,9 +23,10 @@ export EDITOR="$VISUAL"
 alias vi="vim" # set vi to default to vim
 
 # git status colors
-COLOR_RED="\033[01;38;5;124m"
+COLOR_RED="\033[01;38;5;160m"
 COLOR_YELLOW="\033[01;38;5;220m"
 COLOR_GREEN="\033[01;38;5;40m"
+# see PS1 for how to setup colors
 
 function parse_git_color {
     local git_status="$(git status 2> /dev/null)"
@@ -95,16 +96,21 @@ function parse_git_dirty {
 # alias="ls --color"
 
 # custom PS1
+COLOR_BLUE="\033[01;38;5;39m"
+COLOR_ORANGE="\033[01;38;5;214m"
+COLOR_WHITE="\033[01;38;5;15m"
 # template for colors: \[\033[COLORm\]
 # 01 = bold, 38;5 = foreground, 48;5 = background
-# PS1="\[\033[01;38;5;39m\]\@ \[\033[01;38;5;15m\]% " # time (opt, add/remove + on next line) [blue foreground, bold]
-PS1="\[\033[01;38;5;214m\]\u"   # current user [orange foreground, bold]
-PS1+="\[\033[01;38;5;15m\]:"    # colon [white foreground, bold]
-PS1+="\[\033[01;38;5;39m\]["    # `[` [blue foreground, bold]
-PS1+="\[\033[01;38;5;15m\]\w"   # pwd [white foreground, bold]
-PS1+="\[\033[01;38;5;39m\]]"    # `]` [blue foreground, bold]
+# colors chart: https://en.wikipedia.org/wiki/ANSI_escape_code#Colors 
+
+# PS1="\[$COLOR_ORANGE\]\@ \[$COLOR_WHITE\]% " # time (opt, add/remove + on next line)
+PS1="\[$COLOR_ORANGE\]\u"   	# current user [orange foreground, bold]
+PS1+="\[$COLOR_WHITE\]:"    # colon [white foreground, bold]
+PS1+="\[$COLOR_BLUE\]["    # `[`
+PS1+="\[$COLOR_WHITE\]\w"   # pwd [white foreground, bold]
+PS1+="\[$COLOR_BLUE\]]"    # `]`
 PS1+="\`parse_git_branch\`"     # git status
-PS1+="\[\033[01;38;5;39m\]$ "   # $ with space []
+PS1+="\[$COLOR_BLUE\]$ "   # $ with space []
 PS1+="\[$(tput sgr0)\]"         # reset stylings
 export PS1
 
