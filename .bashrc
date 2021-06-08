@@ -15,7 +15,7 @@ stty -ixon
 shopt -s autocd 
 
 # enable vim mode
-set -o vi # use `esc` to trigger
+# set -o vi # use `esc` to trigger
 
 # set vim as default editor
 export VISUAL=vim 
@@ -113,6 +113,12 @@ PS1+="\`parse_git_branch\`"     # git status
 PS1+="\[$COLOR_BLUE\]$ "   # $ with space []
 PS1+="\[$(tput sgr0)\]"         # reset stylings
 export PS1
+
+# git completion
+if [ -f ~/.git-completion.bash ]; then
+	. ~/.git-completion.bash 
+fi
+# source: https://pagepro.co/blog/autocomplete-git-commands-and-branch-names-in-terminal/
 
 # aliases
 alias ga="git add "
