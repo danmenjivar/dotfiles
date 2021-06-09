@@ -47,9 +47,8 @@ function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 	if [ ! "${BRANCH}" == "" ]
 	then
-        COLOR=`parse_git_color`
 		STAT=`parse_git_dirty`
-		echo -e "$COLOR(${BRANCH}${STAT})"
+		echo -e "(${BRANCH}${STAT})"
 	else
 		echo ""
 	fi
@@ -109,6 +108,7 @@ PS1+="\[$COLOR_WHITE\]:"    # colon [white foreground, bold]
 PS1+="\[$COLOR_BLUE\]["    # `[`
 PS1+="\[$COLOR_WHITE\]\W"   # pwd [white foreground, bold]
 PS1+="\[$COLOR_BLUE\]]"    # `]`
+PS1+="\[\$(parse_git_color)\]"
 PS1+="\`parse_git_branch\`"     # git status
 PS1+="\[$COLOR_BLUE\]$ "   # $ with space []
 PS1+="\[$(tput sgr0)\]"         # reset stylings
