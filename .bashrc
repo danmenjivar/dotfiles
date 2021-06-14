@@ -96,7 +96,7 @@ function parse_git_dirty {
 
 # custom PS1
 COLOR_BLUE="\033[01;38;5;39m"
-COLOR_ORANGE="\033[01;38;5;166m"
+COLOR_ORANGE="\033[01;38;5;208m"
 COLOR_WHITE="\033[01;38;5;15m"
 # template for colors: \[\033[COLORm\]
 # 01 = bold, 38;5 = foreground, 48;5 = background
