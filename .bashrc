@@ -90,9 +90,23 @@ function parse_git_dirty {
 }
 
 # ls colors
-# LS_COLORS=""
-# export LS_COLORS
-# alias="ls --color"
+# for more info: https://www.howtogeek.com/307899/how-to-change-the-colors-of-directories-and-files-in-the-ls-command/
+# and https://gist.github.com/thomd/7667642 
+# LS_COLORS="fi=:" 		# file 						- 
+LS_COLORS="di=1:" 		# directory     			- bold
+LS_COLORS+="ln=4;35:" 	# symbolic link 			- underlined magenta
+LS_COLORS+="so=36:"		# socket        			- cyan
+LS_COLORS+="pi=33:"  	# named pipe (PIPO) 		- orange/yellow
+LS_COLORS+="ex=32:"		# executable 				- green
+LS_COLORS+="bd=34;46:"	# block device 				- blue with cyan background
+LS_COLORS+="cd=34;43:"	# character device 			- blue with orange background
+LS_COLORS+="su=30;41:"	# set uid 					- black with red background
+LS_COLORS+="sg=30;46:"	# set gid 					- black with cyan background
+LS_COLORS+="tw=30;42:"	# sticky other writable 	- black with green background
+LS_COLORS+="ow=30;43:"	# other writable 			- black with orange background
+# LS_COLORS+="*.jpg=30;43"	# JPGs (example for adding other file extensions)
+export LS_COLORS
+alias="ls --color"
 
 # custom PS1
 COLOR_BLUE="\033[01;38;5;39m"
