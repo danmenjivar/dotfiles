@@ -28,7 +28,7 @@ COLOR_YELLOW="\033[01;38;5;220m"
 COLOR_GREEN="\033[01;38;5;40m"
 # see PS1 for how to setup colors
 
-function parse_git_color {
+function parse_git_color() {
     local git_status="$(git status 2> /dev/null)"
     
     if [[ $git_status =~ "working directory clean" ]]; then
@@ -107,8 +107,9 @@ COLOR_WHITE="\033[01;38;5;15m"
 # 01 = bold, 38;5 = foreground, 48;5 = background
 # colors chart: https://en.wikipedia.org/wiki/ANSI_escape_code#Colors 
 
-PS1="\[$COLOR_ORANGE\]\@ \[$COLOR_WHITE\]% " 	# time (opt, add/remove + on next line)
-PS1="\[$COLOR_ORANGE\]\u"   					# current user [orange foreground, bold]
+PS1="\n"										# newline
+# PS1="\[$COLOR_ORANGE\]\@ \[$COLOR_WHITE\]% " 	# time (opt, add/remove + on next line)
+PS1+="\[$COLOR_ORANGE\]\u"   					# current user [orange foreground, bold]
 PS1+="\[$COLOR_WHITE\]:"    					# colon [white foreground, bold]
 PS1+="\[$COLOR_BLUE\]["    						# `[`
 PS1+="\[$COLOR_WHITE\]\W"   					# pwd [white foreground, bold]
