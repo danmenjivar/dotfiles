@@ -102,16 +102,16 @@ COLOR_WHITE="\033[01;38;5;15m"
 # 01 = bold, 38;5 = foreground, 48;5 = background
 # colors chart: https://en.wikipedia.org/wiki/ANSI_escape_code#Colors 
 
-# PS1="\[$COLOR_ORANGE\]\@ \[$COLOR_WHITE\]% " # time (opt, add/remove + on next line)
-PS1="\[$COLOR_ORANGE\]\u"   	# current user [orange foreground, bold]
-PS1+="\[$COLOR_WHITE\]:"    # colon [white foreground, bold]
-PS1+="\[$COLOR_BLUE\]["    # `[`
-PS1+="\[$COLOR_WHITE\]\W"   # pwd [white foreground, bold]
-PS1+="\[$COLOR_BLUE\]]"    # `]`
-PS1+="\[\$(parse_git_color)\]"
-PS1+="\`parse_git_branch\`"     # git status
-PS1+="\[$COLOR_BLUE\]$ "   # $ with space []
-PS1+="\[$(tput sgr0)\]"         # reset stylings
+PS1="\[$COLOR_ORANGE\]\@ \[$COLOR_WHITE\]% " 	# time (opt, add/remove + on next line)
+PS1="\[$COLOR_ORANGE\]\u"   					# current user [orange foreground, bold]
+PS1+="\[$COLOR_WHITE\]:"    					# colon [white foreground, bold]
+PS1+="\[$COLOR_BLUE\]["    						# `[`
+PS1+="\[$COLOR_WHITE\]\W"   					# pwd [white foreground, bold]
+PS1+="\[$COLOR_BLUE\]]"    						# `]`
+PS1+="\[\$(parse_git_color)\]"					# colorize git status
+PS1+="\`parse_git_branch\`"     				# git status
+PS1+="\[$COLOR_BLUE\]$ "   						# $ with space []
+PS1+="\[$(tput sgr0)\]"         				# reset stylings
 export PS1
 
 # git completion
