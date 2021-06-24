@@ -48,7 +48,8 @@ function parse_git_branch() {
 	if [ ! "${BRANCH}" == "" ]
 	then
 		STAT=`parse_git_status`
-		echo -e "(${BRANCH}|${STAT})"
+		DIST=`parse_origin_dist`
+		echo -e "(${BRANCH}${DIST}|${STAT})"
 	else
 		echo ""
 	fi
@@ -79,6 +80,30 @@ function parse_git_status() {
 	
 	echo "$stats"
 }
+
+# get commit distance between local branch and origin
+function parse_origin_dist() {
+	status="$(git status 2> /dev/null)"
+	dist=""
+
+	is_ahead=$(echo -n "$status" | grep "ahead")
+	is_behind=$(echo -n "$status" | grep "behind")
+
+	if [ ! -z "$is_ahead"  ]; then
+		dist_val=$(echo "$is_ahead" | sed 's/[^0-9]*//g')
+		dist="↑${dist_val}"
+	fi
+
+	if [ ! -z "$is_behind" ]; then
+		dist_val=$(echo "$is_behind" | sed 's/[^0-9]*//g')
+		dist="↓${dist_val}"	
+	fi
+
+	if [ ! -z "$dist" ]; then
+		echo "${dist}"
+	fi
+}
+
 
 # ls colors
 # for more info: https://www.howtogeek.com/307899/how-to-change-the-colors-of-directories-and-files-in-the-ls-command/
