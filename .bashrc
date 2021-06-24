@@ -49,7 +49,7 @@ function parse_git_branch() {
 	then
 		STAT=`parse_git_status`
 		DIST=`parse_origin_dist`
-		echo -e "(${BRANCH}${DIST}|${STAT})"
+		echo -e "(${BRANCH}${DIST}${STAT})"
 	else
 		echo ""
 	fi
@@ -78,6 +78,10 @@ function parse_git_status() {
 		stats="${stats}${mod}M"
 	fi
 	
+	if [ ! -z $stats ]; then
+		stats="|${stats}"
+	fi
+
 	echo "$stats"
 }
 
