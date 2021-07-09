@@ -78,7 +78,7 @@ function parse_git_status() {
 		stats="${stats}${mod}M"
 	fi
 	
-	if [ ! -z $stats ]; then
+	if [ ! -z "$stats" ]; then
 		stats="|${stats}"
 	fi
 
