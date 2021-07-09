@@ -228,10 +228,10 @@ function parse_origin_dist() {
 ############################
 
 LS_COLORS="fi=:" 		# file 						- 
-LS_COLORS="di=1:" 		# directory     			- bold
+LS_COLORS="di=1;33:" 	# directory     			- bold, yellow/orange
 LS_COLORS+="ln=4;35:" 	# symbolic link 			- underlined magenta
 LS_COLORS+="so=36:"		# socket        			- cyan
-LS_COLORS+="pi=33:"  	# named pipe (PIPO) 		- orange/yellow
+LS_COLORS+="pi=4;33:"  	# named pipe (PIPO) 		- underlined orange/yellow
 LS_COLORS+="ex=32:"		# executable 				- green
 LS_COLORS+="bd=34;46:"	# block device 				- blue with cyan background
 LS_COLORS+="cd=34;43:"	# character device 			- blue with orange background

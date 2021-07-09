@@ -1,21 +1,17 @@
 # vi:syntax=sh
-
 alias refresh='source ~/.bashrc'
 
 # ls
 alias ls='ls --color --group-directories-first'
 alias ll='ls -CF -lh'
 alias la="ll -A"
-# alias l='ls -CF -lh'
-# alias ll='ls -l'
-# alias la='ls -A'
-
-alias ga="git add "
-alias ..="cd .."
-alias cddk="cd ~/Desktop/"
-alias firefox="firefox &"
-alias grep='grep --color=auto'
 alias lst="ls -lht"
 
-# TODO
-# ll, la, group directories first
+# navigation
+alias cddk="cd ~/Desktop/"
+
+# grep
+alias grep='grep --color=auto'
+
+# git 
+alias ga="git add "
