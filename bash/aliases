@@ -1,0 +1,12 @@
+# vi:syntax=sh
+
+alias refresh='source ~/.bash_profile'
+
+# aliases
+alias ga="git add "
+alias ..="cd .."
+alias cddk="cd ~/Desktop/"
+alias firefox="firefox &"
+alias grep='grep --color=auto'
+alias ls="ls --color=auto"
+alias lst="ls -lht"
