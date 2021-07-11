@@ -226,22 +226,24 @@ function parse_origin_dist() {
 ############################
 #      CUSTOM LS COLORS    #
 ############################
-
-LS_COLORS="fi=:" 		# file 						- 
-LS_COLORS="di=1;33:" 	# directory     			- bold, yellow/orange
-LS_COLORS+="ln=4;35:" 	# symbolic link 			- underlined magenta
-LS_COLORS+="so=36:"		# socket        			- cyan
-LS_COLORS+="pi=4;33:"  	# named pipe (PIPO) 		- underlined orange/yellow
-LS_COLORS+="ex=32:"		# executable 				- green
-LS_COLORS+="bd=34;46:"	# block device 				- blue with cyan background
-LS_COLORS+="cd=34;43:"	# character device 			- blue with orange background
-LS_COLORS+="su=30;41:"	# set uid 					- black with red background
-LS_COLORS+="sg=30;46:"	# set gid 					- black with cyan background
-LS_COLORS+="tw=30;42:"	# sticky other writable 	- black with green background
-LS_COLORS+="ow=30;43:"	# other writable 			- black with orange background
-# LS_COLORS+="*.jpg=30;43"	# JPGs (example for adding other file extensions)
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    LS_COLORS="fi=:" 		# file 			- 
+    LS_COLORS+="di=1;33:" 	# directory     	- bold, yellow/orange
+    LS_COLORS+="ln=4;35:" 	# symbolic link 	- underlined magenta
+    LS_COLORS+="so=36:"		# socket        	- cyan
+    LS_COLORS+="pi=4;33:"  	# named pipe (PIPO) 	- underlined orange/yellow
+    LS_COLORS+="ex=32:"		# executable 		- green
+    LS_COLORS+="bd=34;46:"	# block device 		- blue with cyan background
+    LS_COLORS+="cd=34;43:"	# character device 	- blue with orange background
+    LS_COLORS+="su=30;41:"	# set uid 		- black with red background
+    LS_COLORS+="sg=30;46:"	# set gid 		- black with cyan background
+    LS_COLORS+="tw=30;42:"	# sticky other writable - black with green background
+    LS_COLORS+="ow=30;43:"	# other writable 	- black with orange background
+    # LS_COLORS+="*.jpg=30;43"	# JPGs (example for adding other file extensions)
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    LS_COLORS="exfxcxdxbxegedabagacad"
+fi
 export LS_COLORS
-# alias="ls --color"
 # For more info: https://www.howtogeek.com/307899/how-to-change-the-colors-of-directories-and-files-in-the-ls-command/
 # & https://gist.github.com/thomd/7667642 
 
