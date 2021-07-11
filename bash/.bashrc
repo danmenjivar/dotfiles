@@ -173,9 +173,9 @@ function parse_git_branch() {
 
 function parse_git_status() {
 	status=$(git status -s 2> /dev/null)
-	add=$(echo "$status" | grep '??' | wc -l)
-	del=$(echo "$status" | grep 'D' | wc -l)
-	mod=$(echo "$status" | grep 'M' | wc -l)
+	add=$(echo "$status" | grep '??' | wc -l | tr -d '[[:space:]]')
+	del=$(echo "$status" | grep 'D' | wc -l | tr -d '[[:space:]]')
+	mod=$(echo "$status" | grep 'M' | wc -l | tr -d '[[:space:]]')
 	stats=''
 
 	# untracked files count 
