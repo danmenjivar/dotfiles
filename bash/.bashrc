@@ -98,7 +98,7 @@ CDPATH="."
 shopt -s cdable_vars
 # Examples:
 export dotfiles="$HOME/.dotfiles"
-# export projects="$HOME/projects"
+export projects="$HOME/the_odin_project"
 # export documents="$HOME/Documents"
 # export dropbox="$HOME/Dropbox"
 
