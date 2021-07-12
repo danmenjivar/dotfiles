@@ -3,13 +3,13 @@ alias refresh='source ~/.bashrc'
 
 # ls
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    alias ls='ls --color --group-directories-first' # on GNU/linux
+    alias ls='ls -F --color --group-directories-first' # on GNU/linux
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias ls='ls -GF' # on macOS
 fi
-alias ll='ls -CF -lh'
+alias ll='ls -C -lh'
 alias la="ll -A"
-alias lst="ls -lht"
+alias lst="ll -t"
 
 # tmux
 alias t="tmux"
