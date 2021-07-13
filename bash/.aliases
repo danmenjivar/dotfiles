@@ -1,6 +1,9 @@
 # vi:syntax=sh
 alias refresh='source ~/.bashrc'
 
+alias vim="nvim"
+alias vi="nvim"
+
 # ls
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     alias ls='ls -F --color --group-directories-first' # on GNU/linux
@@ -26,3 +29,4 @@ alias grep='grep --color=auto'
 
 # git 
 alias ga="git add "
+
